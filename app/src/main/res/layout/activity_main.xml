@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <TextView
+       android:id="@+id/textView1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Rock Paper Scissor"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginTop="60dp"
+       android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+       />
+
+   <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:textColor="#035377"
+        app:layout_constraintTop_toBottomOf="@id/textView1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:onClick="resetButton"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+       />
+
+   <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintTop_toBottomOf="@id/btn1"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+   <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toStartOf="@id/scoreTextView"
+        app:layout_constraintBottom_toBottomOf="@id/scoreTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="65dp"
+        />
+
+   <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@id/scoreTextView"
+        app:layout_constraintBottom_toBottomOf="@id/scoreTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="45dp"
+        />
+
+   <TextView
+        android:id="@+id/userSelectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rock"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        app:layout_constraintEnd_toStartOf="@id/textView3"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        />
+
+   <TextView
+        android:id="@+id/compSelectionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paper"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintStart_toEndOf="@id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        />
+
+   <TextView
+        android:id="@+id/wonLostTieTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WonLostTie"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreTextView"
+        android:layout_marginTop="64dp"
+        />
+
+   <ImageButton
+         android:id="@+id/rockImage"
+         android:layout_width="120dp"
+         android:layout_height="120dp"
+         android:src="@drawable/rock"
+         android:scaleType="fitCenter"
+         android:tag="1"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/wonLostTieTextView"
+         app:layout_constraintEnd_toStartOf="@id/paperImage"
+         android:layout_marginTop="35dp"
+         android:onClick="rpsButtonSelected"
+         />
+
+   <ImageButton
+       android:id="@+id/paperImage"
+       android:layout_width="120dp"
+       android:layout_height="120dp"
+       android:src="@drawable/paper"
+       android:scaleType="fitCenter"
+       android:tag="2"
+       app:layout_constraintStart_toEndOf="@id/rockImage"
+       app:layout_constraintTop_toBottomOf="@id/wonLostTieTextView"
+       app:layout_constraintEnd_toStartOf="@id/scissorImage"
+       app:layout_constraintBottom_toBottomOf="@id/rockImage"
+       android:layout_marginTop="35dp"
+       android:layout_marginBottom="0dp"
+       android:onClick="rpsButtonSelected"
+    />
+
+   <ImageButton
+       android:id="@+id/scissorImage"
+       android:layout_width="120dp"
+       android:layout_height="120dp"
+       android:src="@drawable/scissor"
+       android:scaleType="fitCenter"
+       android:tag="3"
+       app:layout_constraintStart_toEndOf="@id/paperImage"
+       app:layout_constraintTop_toBottomOf="@id/wonLostTieTextView"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintBottom_toBottomOf="@id/paperImage"
+       android:layout_marginTop="35dp"
+       android:layout_marginBottom="0dp"
+       android:onClick="rpsButtonSelected"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
